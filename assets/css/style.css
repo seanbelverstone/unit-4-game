@@ -1,0 +1,41 @@
+body {
+    background-image: url(../images/crystalbackground2.jpg);
+    width: auto;
+    height: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-weight: 400;
+}
+
+#instructions {
+    background-color: blanchedalmond;
+    width: 800px;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+}
+
+#score, #scoreArea {
+    background-color: firebrick;
+    border: 2px solid black;
+    width: 800px;
+    height: 100px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+#crystal {
+    width: 800px;
+    margin: 10px;
+    padding: 10px;
+}
+
+#redCrystal, #greenCrystal, #purpleCrystal, #yellowCrystal {
+    display: inline;
+}
+
+img {
+    border-radius: 30px;
+}
