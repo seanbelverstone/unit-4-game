@@ -15,12 +15,25 @@ body {
     margin: 10px;
 }
 
+.btn {
+    margin-top: 20px;
+    
+}
+
 #score, #scoreArea {
     background-color: firebrick;
     border: 2px solid black;
     text-align: center;
     padding: 10px;
     margin: 10px;
+}
+
+#scoreText {
+    text-align: right;
+}
+
+#scoreTotal {
+    text-align: left;
 }
 
 #crystal {
