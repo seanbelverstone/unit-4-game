@@ -27,19 +27,17 @@ body {
     margin: 10px;
 }
 
-#scoreText {
-    text-align: right;
-}
-
-#scoreTotal {
-    text-align: left;
-}
-
 #crystal {
-    margin: 10px;
+    margin: 40 10 40 10;
     padding: 10px;
+    
 }
 
 img {
     border-radius: 30px;
+}
+
+#randomNumber {
+    font-size: 32px;
+    font-weight: bolder;
 }

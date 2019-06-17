@@ -10,8 +10,24 @@ var minimum = 19;
 var randomNumber = (Math.floor(Math.random() * (maximum - minimum + 1) ) + minimum);
 console.log(randomNumber);
 var totalScore;
-var wins;
-var losses;
+var wins = 0;
+var losses = 0;
 
+function setWins() {
+    $("#wins").append(wins);
+}
 
+function setLosses() {
+    $("#losses").append(losses);
+}
+
+function setRandomNumber() {
+    $("#randomNumber").append(randomNumber);
+}
+
+$(".btn").one("click", function startGame() {
+    setWins();
+    setLosses();
+    setRandomNumber();
+});
 
