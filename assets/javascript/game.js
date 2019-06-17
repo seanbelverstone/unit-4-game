@@ -13,6 +13,10 @@ console.log(randomNumber);
 var totalScore = 0;
 var wins = 0;
 var losses = 0;
+var redCrystal = (Math.floor(Math.random() * 12 + 1));
+var greenCrystal = (Math.floor(Math.random() * 12 + 1));
+var purpleCrystal = (Math.floor(Math.random() * 12 + 1));
+var yellowCrystal = (Math.floor(Math.random() * 12 + 1));
 
 function setWins() {
     $("#wins").append(wins);
@@ -30,10 +34,41 @@ function setTotalScore() {
     $("#totalScore").append(totalScore);
 }
 
+function setCrystalNumbers() {
+    $("#redText").append(redCrystal);
+    $("#greenText").append(greenCrystal);
+    $("#purpleText").append(purpleCrystal);
+    $("#yellowText").append(yellowCrystal);
+    // if ($("redText") === $("greenText") || $("redText") === $("purpleText") || $("redText") === $("yellowText")) {        
+    //     redCrystal = (Math.floor(Math.random() * 12 - 1));
+    // } else if ($("greenText") === $("purpleText") || $("greenText") === $("yellowText")) {
+    //     greenCrystal = (Math.floor(Math.random() * 12 - 1));
+    // } else if ($("purpleText") === $("yellowText")) {
+    //     purpleCrystal = (Math.floor(Math.random() * 12 - 1));
+    // } 
+    // Trying to prevent duplicate random numbers. Will leave for now.    
+}
+
+function hideNumbers() {
+    $("#redText").css("display", "none");
+    $("#greenText").css("display", "none");
+    $("#purpleText").css("display", "none");
+    $("#yellowText").css("display", "none");
+}
+
+function showNumbers() {
+    $("#redText").css("display", "block");
+    $("#greenText").css("display", "block");
+    $("#purpleText").css("display", "block");
+    $("#yellowText").css("display", "block");
+}
+
 $(".btn").one("click", function startGame() {
     setWins();
     setLosses();
     setRandomNumber();
     setTotalScore();
+    setCrystalNumbers();
+    hideNumbers();
 });
 

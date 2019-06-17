@@ -41,3 +41,13 @@ img {
     font-size: 32px;
     font-weight: bolder;
 }
+
+#redText, #greenText, #purpleText, #yellowText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: black;
+    font-weight: 400;
+}
