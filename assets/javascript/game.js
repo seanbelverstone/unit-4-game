@@ -8,11 +8,15 @@ When total score is more than the random number, update wins by 1 and generate a
 
 var maximum = 120;
 var minimum = 19;
-var randomNumber = (Math.floor(Math.random() * (maximum - minimum + 1) ) + minimum);
+var randomNumber;
+function getRandomNumber () {
+    return (Math.floor(Math.random() * (maximum - minimum + 1) ) + minimum);
+} 
 console.log(randomNumber);
 var userScore = 0;
 var wins = 0;
 var losses = 0;
+//create function for creating a randomcrystal number like the one above
 var redCrystal = (Math.floor(Math.random() * 12 + 1));
 var greenCrystal = (Math.floor(Math.random() * 12 + 1));
 var purpleCrystal = (Math.floor(Math.random() * 12 + 1));
@@ -27,12 +31,13 @@ function setLosses() {
 }
 
 function setRandomNumber() {
+    randomNumber = getRandomNumber();
     $("#randomNumber").append(randomNumber);
 }
 
 function setTotalScore() {
-    totalScore = 0;
-    $("#totalScore").append(totalScore);
+    userScore = 0;
+    $("#totalScore").append(userScore);
 }
 
 function setCrystalNumbers() { //setting random numbers to the gems
@@ -74,10 +79,9 @@ function showYellow() {
 }
 
 function reset() { //game reset function
-    $("#totalScore").remove();
-    $("#randomNumber").remove();
-    userScore = 0;
-    randomNumber = 0;
+    $("#totalScore").empty();
+    $("#randomNumber").empty();
+    $("#redText").empty();
 }
 
 $(".btn").one("click", function startGame() { // start game function
