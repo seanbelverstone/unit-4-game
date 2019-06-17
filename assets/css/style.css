@@ -45,9 +45,9 @@ img {
 #redText, #greenText, #purpleText, #yellowText {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 28%;
     transform: translate(-50%, -50%);
-    font-size: 20px;
+    font-size: 30px;
     color: black;
-    font-weight: 400;
+    font-weight: bolder;
 }

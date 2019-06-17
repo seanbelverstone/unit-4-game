@@ -73,6 +73,13 @@ function showYellow() {
     $("#yellowText").css("display", "block");
 }
 
+function reset() {
+    $("#totalScore").remove();
+    $("#randomNumber").remove();
+    userScore = 0;
+    randomNumber = 0;
+}
+
 $(".btn").one("click", function startGame() {
     setWins();
     setLosses();
@@ -88,5 +95,20 @@ $("#redCrystal").click(function () {
     userScore = userScore + redCrystal;
     console.log("Current score: " + userScore);
     $('#totalScore').text(userScore);
-        if (userScore === randomNumber) {}
+        if (userScore === randomNumber) {
+            wins++;
+            reset();
+            setRandomNumber();
+            setTotalScore();
+            setCrystalNumbers();
+            hideNumbers();
+        } else if (userScore > randomNumber) {
+            losses++;
+            alert("Sorry, you lost this one! Try again");
+            reset();
+            setRandomNumber();
+            setTotalScore();
+            setCrystalNumbers();
+            hideNumbers();
+        }
 });
