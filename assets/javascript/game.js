@@ -10,7 +10,7 @@ var maximum = 120;
 var minimum = 19;
 var randomNumber = (Math.floor(Math.random() * (maximum - minimum + 1) ) + minimum);
 console.log(randomNumber);
-var totalScore = 0;
+var userScore = 0;
 var wins = 0;
 var losses = 0;
 var redCrystal = (Math.floor(Math.random() * 12 + 1));
@@ -31,6 +31,7 @@ function setRandomNumber() {
 }
 
 function setTotalScore() {
+    totalScore = 0;
     $("#totalScore").append(totalScore);
 }
 
@@ -56,10 +57,19 @@ function hideNumbers() {
     $("#yellowText").css("display", "none");
 }
 
-function showNumbers() {
+function showRed() {
     $("#redText").css("display", "block");
+}
+
+function showGreen() {
     $("#greenText").css("display", "block");
+}
+
+function showPurple() {
     $("#purpleText").css("display", "block");
+}
+
+function showYellow() {
     $("#yellowText").css("display", "block");
 }
 
@@ -72,3 +82,11 @@ $(".btn").one("click", function startGame() {
     hideNumbers();
 });
 
+
+$("#redCrystal").click(function () {
+    showRed();
+    userScore = userScore + redCrystal;
+    console.log("Current score: " + userScore);
+    $('#totalScore').text(userScore);
+        if (userScore === randomNumber) {}
+});
