@@ -35,7 +35,7 @@ function setTotalScore() {
     $("#totalScore").append(totalScore);
 }
 
-function setCrystalNumbers() {
+function setCrystalNumbers() { //setting random numbers to the gems
     $("#redText").append(redCrystal);
     $("#greenText").append(greenCrystal);
     $("#purpleText").append(purpleCrystal);
@@ -50,14 +50,14 @@ function setCrystalNumbers() {
     // Trying to prevent duplicate random numbers. Will leave for now.    
 }
 
-function hideNumbers() {
+function hideNumbers() { // hide the gem numbers
     $("#redText").css("display", "none");
     $("#greenText").css("display", "none");
     $("#purpleText").css("display", "none");
     $("#yellowText").css("display", "none");
 }
 
-function showRed() {
+function showRed() { //show the numbers on the gems
     $("#redText").css("display", "block");
 }
 
@@ -73,14 +73,14 @@ function showYellow() {
     $("#yellowText").css("display", "block");
 }
 
-function reset() {
+function reset() { //game reset function
     $("#totalScore").remove();
     $("#randomNumber").remove();
     userScore = 0;
     randomNumber = 0;
 }
 
-$(".btn").one("click", function startGame() {
+$(".btn").one("click", function startGame() { // start game function
     setWins();
     setLosses();
     setRandomNumber();
@@ -90,7 +90,7 @@ $(".btn").one("click", function startGame() {
 });
 
 
-$("#redCrystal").click(function () {
+$("#redCrystal").click(function () { //this is the function whenever the red crystal is clicked
     showRed();
     userScore = userScore + redCrystal;
     console.log("Current score: " + userScore);
