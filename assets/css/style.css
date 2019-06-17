@@ -37,7 +37,7 @@ img {
     border-radius: 30px;
 }
 
-#randomNumber {
+#randomNumber, #totalScore {
     font-size: 32px;
     font-weight: bolder;
 }
