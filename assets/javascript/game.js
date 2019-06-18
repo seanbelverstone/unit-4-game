@@ -12,15 +12,16 @@ var randomNumber;
 function getRandomNumber () {
     return (Math.floor(Math.random() * (maximum - minimum + 1) ) + minimum);
 } 
-console.log(randomNumber);
 var userScore = 0;
 var wins = 0;
 var losses = 0;
-//create function for creating a randomcrystal number like the one above
-var redCrystal = (Math.floor(Math.random() * 12 + 1));
-var greenCrystal = (Math.floor(Math.random() * 12 + 1));
-var purpleCrystal = (Math.floor(Math.random() * 12 + 1));
-var yellowCrystal = (Math.floor(Math.random() * 12 + 1));
+function getCrystalNumber() {
+    return (Math.floor(Math.random() * 12 + 1));
+}
+var redCrystal;
+var greenCrystal;
+var purpleCrystal;
+var yellowCrystal;
 
 function setWins() {
     $("#wins").append(wins);
@@ -41,6 +42,10 @@ function setTotalScore() {
 }
 
 function setCrystalNumbers() { //setting random numbers to the gems
+    redCrystal = getCrystalNumber();
+    greenCrystal = getCrystalNumber();
+    purpleCrystal = getCrystalNumber();
+    yellowCrystal = getCrystalNumber();
     $("#redText").append(redCrystal);
     $("#greenText").append(greenCrystal);
     $("#purpleText").append(purpleCrystal);
@@ -82,6 +87,10 @@ function reset() { //game reset function
     $("#totalScore").empty();
     $("#randomNumber").empty();
     $("#redText").empty();
+    setRandomNumber();
+    setTotalScore();
+    setCrystalNumbers();
+    hideNumbers();
 }
 
 $(".btn").one("click", function startGame() { // start game function
@@ -101,18 +110,13 @@ $("#redCrystal").click(function () { //this is the function whenever the red cry
     $('#totalScore').text(userScore);
         if (userScore === randomNumber) {
             wins++;
+            $("#wins").text("Wins: " + wins);
+            alert("Well done!");
             reset();
-            setRandomNumber();
-            setTotalScore();
-            setCrystalNumbers();
-            hideNumbers();
         } else if (userScore > randomNumber) {
             losses++;
+            $("#losses").text("Losses: " + losses);
             alert("Sorry, you lost this one! Try again");
             reset();
-            setRandomNumber();
-            setTotalScore();
-            setCrystalNumbers();
-            hideNumbers();
         }
 });
