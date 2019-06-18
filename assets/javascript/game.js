@@ -86,7 +86,7 @@ function showYellow() {
 function reset() { //game reset function
     $("#totalScore").empty();
     $("#randomNumber").empty();
-    $("#redText").empty();
+    $("#redText, #greenText, #purpleText, #yellowText").empty();
     setRandomNumber();
     setTotalScore();
     setCrystalNumbers();
