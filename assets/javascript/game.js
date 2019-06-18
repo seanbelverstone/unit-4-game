@@ -22,6 +22,7 @@ var redCrystal;
 var greenCrystal;
 var purpleCrystal;
 var yellowCrystal;
+var crystalArray = []; // an empty array that will store the random crystal numbers
 
 function setWins() {
     $("#wins").append(wins);
@@ -50,15 +51,21 @@ function setCrystalNumbers() { //setting random numbers to the gems
     $("#greenText").append(greenCrystal);
     $("#purpleText").append(purpleCrystal);
     $("#yellowText").append(yellowCrystal);
-    // if ($("redText") === $("greenText") || $("redText") === $("purpleText") || $("redText") === $("yellowText")) {        
-    //     redCrystal = (Math.floor(Math.random() * 12 - 1));
-    // } else if ($("greenText") === $("purpleText") || $("greenText") === $("yellowText")) {
-    //     greenCrystal = (Math.floor(Math.random() * 12 - 1));
-    // } else if ($("purpleText") === $("yellowText")) {
-    //     purpleCrystal = (Math.floor(Math.random() * 12 - 1));
-    // } 
-    // Trying to prevent duplicate random numbers. Will leave for now.    
-}
+    crystalArray.push(redCrystal, greenCrystal, purpleCrystal, yellowCrystal);
+    console.log(crystalArray);
+
+        for (var iterator = 0; iterator > crystalArray.length; iterator++) {
+            if (crystalArray.indexOf(iterator)) {
+                console.log(true);
+                $("#redText, #greenText, #purpleText, #yellowText").empty();
+                setCrystalNumbers();
+                } else {
+                console.log(false);
+            }
+        }
+    }
+
+
 
 function hideNumbers() { // hide the gem numbers
     $("#redText").css("display", "none");
@@ -87,6 +94,7 @@ function reset() { //game reset function
     $("#totalScore").empty();
     $("#randomNumber").empty();
     $("#redText, #greenText, #purpleText, #yellowText").empty();
+    crystalArray.empty();
     setRandomNumber();
     setTotalScore();
     setCrystalNumbers();
