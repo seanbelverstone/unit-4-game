@@ -120,3 +120,57 @@ $("#redCrystal").click(function () { //this is the function whenever the red cry
             reset();
         }
 });
+
+$("#greenCrystal").click(function () { //this is the function whenever the green crystal is clicked
+    showGreen();
+    userScore = userScore + greenCrystal;
+    console.log("Current score: " + userScore);
+    $('#totalScore').text(userScore);
+        if (userScore === randomNumber) {
+            wins++;
+            $("#wins").text("Wins: " + wins);
+            alert("Well done!");
+            reset();
+        } else if (userScore > randomNumber) {
+            losses++;
+            $("#losses").text("Losses: " + losses);
+            alert("Sorry, you lost this one! Try again");
+            reset();
+        }
+});
+
+$("#purpleCrystal").click(function () { //this is the function whenever the purple crystal is clicked
+    showPurple();
+    userScore = userScore + purpleCrystal;
+    console.log("Current score: " + userScore);
+    $('#totalScore').text(userScore);
+        if (userScore === randomNumber) {
+            wins++;
+            $("#wins").text("Wins: " + wins);
+            alert("Well done!");
+            reset();
+        } else if (userScore > randomNumber) {
+            losses++;
+            $("#losses").text("Losses: " + losses);
+            alert("Sorry, you lost this one! Try again");
+            reset();
+        }
+});
+
+$("#yellowCrystal").click(function () { //this is the function whenever the yellow crystal is clicked
+    showYellow();
+    userScore = userScore + yellowCrystal;
+    console.log("Current score: " + userScore);
+    $('#totalScore').text(userScore);
+        if (userScore === randomNumber) {
+            wins++;
+            $("#wins").text("Wins: " + wins);
+            alert("Well done!");
+            reset();
+        } else if (userScore > randomNumber) {
+            losses++;
+            $("#losses").text("Losses: " + losses);
+            alert("Sorry, you lost this one! Try again");
+            reset();
+        }
+});
