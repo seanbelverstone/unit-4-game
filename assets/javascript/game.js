@@ -53,19 +53,7 @@ function setCrystalNumbers() { //setting random numbers to the gems
     $("#yellowText").append(yellowCrystal);
     crystalArray.push(redCrystal, greenCrystal, purpleCrystal, yellowCrystal);
     console.log(crystalArray);
-
-        // for (var iterator = 0; iterator < crystalArray.length; iterator++) {
-        //     if (crystalArray.indexOf(iterator)) {
-        //         console.log(true);
-        //         crystalArray = [];
-        //         $("#redText, #greenText, #purpleText, #yellowText").empty();
-        //         setCrystalNumbers();
-        //         } else {
-        //         console.log(false);
-        //     } trying to create a for loop that checks for duplicates but it's not working.
-        // }
     }
-
 
 
 function hideNumbers() { // hide the gem numbers
